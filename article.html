@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#suggestions {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/9/904/959/field-nature-land-wheat-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    
+}
+    </style>
+</head>
+<body>
+    <h1>Search for Plants</h1>
+    <input type="text" id="plantSearch" placeholder="Enter plant name">
+    <button id="searchButton">Search</button>
+    <div id="suggestions"></div>
+    <button id="backButton">Back to Home</button>
+    
+
+    <script>
+        document.getElementById('backButton').onclick = function() {
+            window.location.href = 'craww.html';
+        };
+
+        document.getElementById('searchButton').onclick = function() {
+            const plantName = document.getElementById('plantSearch').value;
+            fetch(`https://openfarm.cc/${plantName}`)
+                .then(response => response.json())
+                .then(data => {
+                    const suggestionsDiv = document.getElementById('suggestions');
+                    suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+                    if (data && data.plants) {
+                        data.plants.forEach(plant => {
+                            const suggestion = document.createElement('div');
+                            suggestion.textContent = plant.name; // Display plant name
+                            suggestionsDiv.appendChild(suggestion);
+                        });
+                    } else {
+                        suggestionsDiv.textContent = 'No suggestions found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        };
+    </script>
+</body>
+</html>

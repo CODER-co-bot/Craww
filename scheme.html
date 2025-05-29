@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemes Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://farmhacker.com/wp-content/uploads/2020/03/beautiful-red-barn-next-to-black-fence-and-trees-background-wallpaper-pictures-.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    
+
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#suggestions {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search for Farming Schemes</h1>
+        <div class="search-container">
+            <input type="text" id="schemeSearch" placeholder="Enter scheme name">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="suggestions"></div>
+        <button id="backButton">Back to Home</button>
+    </div>
+
+    <script>
+        document.getElementById('backButton').onclick = function() {
+            window.location.href = 'craww.html';
+        };
+
+        document.getElementById('searchButton').onclick = function() {
+            const schemeName = document.getElementById('schemeSearch').value;
+            const apiUrl = `https://api.openfarm.cc/v1/schemes?search=${schemeName}`; // Replace with the actual API URL
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const suggestionsDiv = document.getElementById('suggestions');
+                    suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+                    if (data && data.schemes) {
+                        data.schemes.forEach(scheme => {
+                            const suggestion = document.createElement('div');
+                            suggestion.textContent = scheme.name; // Display scheme name
+                            suggestionsDiv.appendChild(suggestion);
+                        });
+                    } else {
+                        suggestionsDiv.textContent = 'No suggestions found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    const suggestionsDiv = document.getElementById('suggestions');
+                    suggestionsDiv.textContent = 'Error fetching data. Please try again.';
+                });
+        };
+    </script>
+</body>
+</html>

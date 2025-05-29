@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://png.pngtree.com/background/20230611/original/pngtree-an-old-fashioned-style-drawing-of-a-farm-and-rural-landscape-picture-image_3165932.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    }
+    
+    .container {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    .button-container {
+        margin: 20px 0;
+    }
+    
+    .suggestionButton {
+        padding: 10px 15px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .suggestionButton:hover {
+        background-color: #0056b3;
+    }
+    
+    button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Suggestions</h1>
+        <div class="button-container">
+            <button class="suggestionButton">Crop Based</button>
+            <button class="suggestionButton">Plant Based</button>
+            <button class="suggestionButton">Leaf Based</button>
+            <button class="suggestionButton">Stem Based</button>
+            <button class="suggestionButton">Root Based</button>
+            <button class="suggestionButton">Others</button>
+        </div>
+        <button id="backButton">Back to Home</button>
+    </div>
+
+    <script>
+        document.getElementById('backButton').onclick = function() {
+            window.location.href = 'craww.html';
+        };
+    </script>
+</body>
+</html>
