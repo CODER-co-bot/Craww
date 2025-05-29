@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craww - Natural Fertilizer App</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Settings Menu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vertical Scrolling Button Section</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+h1{
+    font-family: cursive;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.settings {
+    position: relative;
+    display: inline-block;
+}
+
+.settings-button {
+    background-color: #f6f4f4; /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.settings-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.settings-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-menu li {
+    padding: 8px 12px;
+}
+
+.settings-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.settings-menu li:hover {
+    background-color: #efdcdc; /* Light grey */
+}
+
+
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.leaf-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(203, 218, 203);
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 25px;
+    
+    
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.camera-icon {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.suggestions {
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.result {
+    margin-top: 20px;
+}
+body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("https://homegrown.extension.ncsu.edu/wp-content/uploads/2019/09/Composting-Vermicomposting-makes-your-garden-grow_NC-State-Extension_Homegrown.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.scroll-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e7e7e7;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.card button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #d1d1d1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="settings">
+        <button id="settingsButton" class="settings-button">⚙️</button>
+        <div id="settingsMenu" class="settings-menu">
+            <ul>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li><a href="#rating">Rating</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#appInfo">App Info</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+
+    <div class="container">
+        <div class="logo">
+            <div class="leaf-icon">🍃</div>
+            <h1>Craww</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a plant..." onkeyup="showSuggestions(this.value)">
+            <button class="camera-icon" onclick="openCamera()">📷</button>
+            <button id="searchButton">Search</button>
+            <div id="results"></div>
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+        <div id="result" class="result"> </div>
+    </div>
+    <script src="script.js"></script>
+    <div class="scroll-container">
+        <div class="card">
+            <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/10434/production/_90121666_agreementcartoon.jpg" alt="Articles">
+            <button id="articleButton">Articles</button>
+        </div>
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/012/665/107/original/simple-cartoon-illustration-of-an-open-newspaper-office-concept-vector.jpg" alt="News">
+            <button id="newsButton">News</button>
+        </div>
+        <div class="card">
+            <img src="https://www.svgrepo.com/download/152068/four-squares.svg" alt="Categories">
+            <button id="categoriesButton">Categories</button>
+        </div>
+        <div class="card">
+            <img src="http://www.clipartbest.com/cliparts/yTo/eGx/yToeGxg8c.svg" alt="Bookmark">
+            <button>Bookmark</button>
+        </div>
+        <div class="card">
+            <img src="https://c8.alamy.com/comp/2ANK9RP/order-receipt-flat-icon-2ANK9RP.jpg" alt="Order">
+            <button>Order</button>
+        </div>
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/599/745/original/vector-business-corporate-s-letter-logo.jpg" alt="Schemes">
+            <button id="schemeButton">Schemes</button>
+        </div>
+        <div class="card">
+            <img src="https://webstockreview.net/images/employee-clipart-government-employee-2.jpg" alt="Officers Near Me">
+            <button>Officers Near Me</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        const plants = {
+    "Tomato": {
+        fertilizer: "Organic fertilizers are derived from natural sources and are highly beneficial for growing tomatoes. Common organic fertilizers include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which provides a slow release of nitrogen, phosphorus, and potassium; bone meal, which is high in phosphorus and promotes root development; fish emulsion, a liquid fertilizer rich in nitrogen and trace minerals; and kelp meal, which contains essential trace minerals and growth hormones. Other options include blood meal, which is very high in nitrogen, and alfalfa meal, which provides a balanced nutrient profile along with growth stimulants. These organic fertilizers not only supply essential nutrients but also enhance the overall health of the soil, making them an excellent choice for sustainable tomato cultivation.",
+        advantages: "Using organic fertilizers for tomatoes offers several advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is vital for healthy plant growth. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, tomatoes grown with organic fertilizers often exhibit better flavor and nutritional quality, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for tomatoes. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of fast-growing tomato plants. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the gardener. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the garden, which can negatively impact plant health. Overall, while organic fertilizers require careful management, they contribute to healthier plants and a more sustainable gardening approach."
+    },
+    "Cucumber": {
+        fertilizer: "Organic fertilizers are an excellent choice for growing cucumbers, as they provide essential nutrients while enhancing soil health. Common organic fertilizers suitable for cucumbers include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; bone meal, which is high in phosphorus and supports root development and flowering; fish emulsion, a liquid fertilizer rich in nitrogen that promotes leafy growth; and kelp meal, which contains trace minerals and growth hormones that enhance plant health. Other options include blood meal, which is very high in nitrogen, and alfalfa meal, which provides a balanced nutrient profile along with growth stimulants. These organic fertilizers not only nourish the plants but also improve the overall fertility and microbial activity of the soil, making them ideal for sustainable cucumber cultivation.",
+        advantages: "Using organic fertilizers for cucumbers offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for healthy cucumber growth. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, cucumbers grown with organic fertilizers often exhibit better flavor and nutritional quality, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for cucumbers. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of fast-growing cucumber plants. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the gardener. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the garden, which can negatively impact plant health. Overall, while organic fertilizers require careful management, they contribute to healthier plants and a more sustainable gardening approach."
+    },
+    "Lettuce": {
+        fertilizer: "Organic fertilizers are highly beneficial for growing lettuce, as they provide essential nutrients while promoting soil health and sustainability. Common organic fertilizers suitable for lettuce include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and fish emulsion, a liquid fertilizer rich in nitrogen that encourages leafy growth. Other options include blood meal, which is very high in nitrogen and promotes vigorous foliage development, and alfalfa meal, which provides a balanced nutrient profile along with growth stimulants. Additionally, kelp meal can be used to supply trace minerals and growth hormones that enhance plant health. These organic fertilizers not only nourish the lettuce plants but also improve soil fertility and microbial activity, making them ideal for sustainable lettuce cultivation.",
+        
+        advantages: "Using organic fertilizers for lettuce offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for healthy lettuce growth. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, lettuce grown with organic fertilizers often exhibits better flavor and nutritional quality, making it more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for lettuce. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of fast-growing lettuce plants. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the gardener. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the garden, which can negatively impact plant health. Overall, while organic fertilizers require careful management, they contribute to healthier plants and a more sustainable gardening approach."
+    },
+    "Coconut": {
+        fertilizer: "Organic fertilizers are essential for the healthy growth and productivity of coconut palms, as they provide vital nutrients while enhancing soil health. Common organic fertilizers suitable for coconuts include coconut coir, which is a byproduct of coconut processing and helps improve soil structure and moisture retention; well-rotted manure, which supplies a balanced mix of nitrogen, phosphorus, and potassium; and compost, which enriches the soil with a variety of nutrients and beneficial microorganisms. Other options include fish emulsion, which is rich in nitrogen and trace minerals, and green manure crops, such as legumes, which can be grown and then incorporated into the soil to enhance fertility. Additionally, organic fertilizers like bone meal and rock phosphate can be used to provide phosphorus, which is crucial for root development and fruiting. These organic amendments not only nourish coconut palms but also improve soil fertility and microbial activity, making them ideal for sustainable coconut cultivation.",
+        
+        advantages: "Using organic fertilizers for coconut palms offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for the growth of coconut palms, especially in sandy soils. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the trees and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, coconuts grown with organic fertilizers often exhibit better quality and flavor, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in coconut-growing regions that may be sensitive to chemical runoff.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for coconut palms. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the trees. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing coconut palms. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the plantation, which can negatively impact plant health. Overall, while organic fertilizers require careful management, they contribute to healthier coconut palms and a more sustainable agricultural approach."
+    },
+    "Wheat": {
+        fertilizer: "Organic fertilizers play a crucial role in the sustainable cultivation of wheat, providing essential nutrients while enhancing soil health and fertility. Common organic fertilizers suitable for wheat include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and green manure crops, such as legumes, which can be grown and then incorporated into the soil to enhance fertility. Other options include bone meal, which is high in phosphorus and supports root development, and fish emulsion, which is rich in nitrogen and trace minerals that promote healthy plant growth. Additionally, organic amendments like kelp meal can provide trace elements and growth hormones that enhance overall plant vigor. These organic fertilizers not only nourish wheat plants but also improve soil microbial activity, making them ideal for sustainable wheat production.",
+        
+        advantages: "Using organic fertilizers for wheat offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for healthy wheat growth, especially in dry conditions. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, wheat grown with organic fertilizers often exhibits better quality, including improved taste and nutritional value, making it more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for wheat. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing wheat plants, particularly during critical growth stages. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier wheat plants and a more sustainable agricultural approach."
+    },
+    "Rice": {
+        fertilizer: "Organic fertilizers are essential for the sustainable cultivation of rice, providing vital nutrients while enhancing soil health and fertility. Common organic fertilizers suitable for rice include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and green manure crops, such as legumes, which can be grown and then incorporated into the soil to enhance fertility. Other options include rice husk ash, which provides silica and potassium, and fish emulsion, which is rich in nitrogen and trace minerals that promote healthy plant growth. Additionally, organic amendments like bone meal can be used to supply phosphorus, which is crucial for root development and overall plant vigor. These organic fertilizers not only nourish rice plants but also improve soil microbial activity and water retention, making them ideal for sustainable rice production.",
+        
+        advantages: "Using organic fertilizers for rice offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for rice cultivation, especially in wetland conditions. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, rice grown with organic fertilizers often exhibits better quality, including improved taste and nutritional value, making it more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility and resilience against pests and diseases.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for rice. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing rice plants, particularly during critical growth stages. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier rice plants and a more sustainable agricultural approach."
+    },
+    "Potato": {
+        fertilizer: " Organic fertilizers are vital for the successful cultivation of potatoes, as they provide essential nutrients while enhancing soil health and sustainability. Common organic fertilizers suitable for potatoes include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and bone meal, which is high in phosphorus and supports root development and tuber formation. Other options include fish emulsion, which is rich in nitrogen and trace minerals that promote healthy foliage growth, and kelp meal, which provides trace elements and growth hormones that enhance overall plant vigor. Additionally, green manure crops, such as legumes, can be grown and then incorporated into the soil to improve fertility. These organic fertilizers not only nourish potato plants but also improve soil microbial activity and moisture retention, making them ideal for sustainable potato production.",
+        
+        advantages: "Using organic fertilizers for potatoes offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for healthy potato growth, especially in sandy or loamy soils. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, potatoes grown with organic fertilizers often exhibit better quality, including improved taste and nutritional value, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for potatoes. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing potato plants, particularly during critical growth stages. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier potato plants and a more sustainable agricultural approach."
+    },
+    "Eggplant": {
+        fertilizer: "Organic fertilizers are essential for the successful cultivation of eggplant, providing vital nutrients while enhancing soil health and sustainability. Common organic fertilizers suitable for eggplant include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and bone meal, which is high in phosphorus and supports root development and flowering. Other options include fish emulsion, which is rich in nitrogen and trace minerals that promote healthy foliage growth, and kelp meal, which provides trace elements and growth hormones that enhance overall plant vigor. Additionally, green manure crops, such as legumes, can be grown and then incorporated into the soil to improve fertility. These organic fertilizers not only nourish eggplant plants but also improve soil microbial activity and moisture retention, making them ideal for sustainable eggplant production.",
+        
+        advantages: "Using organic fertilizers for eggplant offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for healthy eggplant growth, especially in well-drained soils. Second, organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. Third, they are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Additionally, eggplants grown with organic fertilizers often exhibit better quality, including improved taste and nutritional value, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for eggplant. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing eggplant plants, particularly during critical growth stages. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier eggplant plants and a more sustainable agricultural approach."
+    },
+    "Watermelon": {
+        fertilizer: "Organic fertilizers are crucial for the successful cultivation of watermelon, providing essential nutrients while promoting soil health and sustainability. Common organic fertilizers suitable for watermelon include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and bone meal, which is high in phosphorus and supports root development and flowering. Other options include fish emulsion, which is rich in nitrogen and trace minerals that promote healthy vine growth, and kelp meal, which provides trace elements and growth hormones that enhance overall plant vigor. Additionally, green manure crops, such as legumes, can be grown and then incorporated into the soil to improve fertility. These organic fertilizers not only nourish watermelon plants but also improve soil microbial activity and moisture retention, making them ideal for sustainable watermelon production.",
+        
+        advantages: "Using organic fertilizers for watermelon offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for the growth of watermelon, especially in sandy or well-drained soils. Organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. This slow release is particularly beneficial for watermelons, which require consistent nutrition throughout their growth cycle. Additionally, organic fertilizers are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Watermelons grown with organic fertilizers often exhibit better quality, including improved taste and nutritional value, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility and resilience against pests and diseases.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for watermelon. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. This variability can lead to nutrient deficiencies or excesses if not managed carefully. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing watermelon plants, particularly during critical growth stages such as flowering and fruit set. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier watermelon plants and a more sustainable agricultural approach. "
+    },
+    "Peanut": {
+        fertilizer: "Organic fertilizers are crucial for the successful cultivation of peanuts, as they provide essential nutrients while enhancing soil health and promoting sustainable agricultural practices. Common organic fertilizers suitable for peanuts include compost, which enriches the soil with a balanced mix of nutrients and improves soil structure; well-rotted manure, which supplies a slow release of nitrogen, phosphorus, and potassium; and bone meal, which is particularly high in phosphorus and supports root development and flowering. Additionally, fish emulsion is an excellent option, rich in nitrogen and trace minerals that promote healthy foliage growth. Kelp meal can also be beneficial, providing trace elements and growth hormones that enhance overall plant vigor. Peanuts, being legumes, have the unique ability to fix atmospheric nitrogen through their root nodules, so incorporating green manure crops, such as clover or vetch, can further enhance soil fertility when tilled into the soil before planting. These organic fertilizers not only nourish peanut plants but also improve soil microbial activity and moisture retention, making them ideal for sustainable peanut production.",
+        
+        advantages: "Using organic fertilizers for peanuts offers numerous advantages. First, they improve soil health by enhancing soil structure, increasing microbial activity, and improving water retention, which is crucial for the growth of peanuts, especially in sandy or well-drained soils. Organic fertilizers release nutrients slowly, providing a steady supply of nutrients to the plants and reducing the risk of nutrient leaching into the environment. This slow release is particularly beneficial for peanuts, which require consistent nutrition throughout their growth cycle, especially during flowering and pod development. Additionally, organic fertilizers are environmentally safe, as they are less likely to contaminate water sources and are safer for beneficial organisms in the soil. Peanuts grown with organic fertilizers often exhibit better quality, including improved taste and nutritional value, making them more appealing to consumers. Finally, using organic fertilizers supports sustainable farming practices, reducing reliance on synthetic inputs and promoting a healthier ecosystem, which is particularly important in maintaining long-term soil fertility and resilience against pests and diseases.",
+        disadvantages: "Despite their benefits, there are some disadvantages to using organic fertilizers for peanuts. One significant drawback is the variability in nutrient content, which can make it challenging to determine the exact nutrient levels being provided to the plants. This variability can lead to nutrient deficiencies or excesses if not managed carefully. Additionally, organic fertilizers typically release nutrients more slowly than synthetic fertilizers, which may not meet the immediate nutrient needs of rapidly growing peanut plants, particularly during critical growth stages such as flowering and pod formation. The preparation and application of organic fertilizers can also be more labor-intensive compared to using pre-packaged synthetic options, requiring more time and effort from the farmer. Furthermore, organic fertilizers can be more expensive, especially if purchased in small quantities or if sourcing high-quality materials. Lastly, if organic materials like manure are not properly composted, there is a risk of introducing pathogens or weed seeds into the field, which can negatively impact crop health. Overall, while organic fertilizers require careful management, they contribute to healthier peanut plants and a more sustainable agricultural approach."
+    }
+};
+
+function showSuggestions(value) {
+    const suggestions = document.getElementById('suggestions');
+    suggestions.innerHTML = '';
+    if (value.length === 0) return;
+
+    const filteredPlants = Object.keys(plants).filter(plant => 
+        plant.toLowerCase().includes(value.toLowerCase())
+    );
+
+    filteredPlants.forEach(plant => {
+        const div = document.createElement('div');
+        div.className = 'suggestion-item';
+        div.textContent = plant;
+        div.onclick = () => displayResult(plant);
+        suggestions.appendChild(div);
+    });
+}
+
+function displayResult(plant) {
+    const result = document.getElementById('result');
+    const { fertilizer, advantages, disadvantages } = plants[plant];
+    result.innerHTML = `
+        <h2>${plant}</h2>
+        <p><strong>Natural Fertilizer:</strong> ${fertilizer}</p>
+       
+        <p><strong>Advantages:</strong> ${advantages}</p>
+        <p><strong>Disadvantages:</strong> ${disadvantages}</p>
+        
+    `;
+}
+
+function openCamera() {
+    alert("Camera functionality is not implemented in this demo.");
+}
+document.getElementById('settingsButton').addEventListener('click', function() {
+    const menu = document.getElementById('settingsMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close the menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('#settingsButton')) {
+        const menu = document.getElementById('settingsMenu');
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+        }
+    }
+}
+document.getElementById('articleButton').onclick = function() {
+            window.location.href = 'article.html';
+        };
+        document.getElementById('schemeButton').onclick = function() {
+            window.location.href = 'scheme.html';
+        };
+        document.getElementById('newsButton').onclick = function() {
+            window.location.href = 'news.html';
+        };
+        document.getElementById('categoriesButton').onclick = function() {
+            window.location.href = 'categories.html';
+        };
+        document.getElementById('searchButton').addEventListener('click', function() {
+    const query = document.getElementById('searchInput').value;
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    if (query) {
+        const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json&no_redirect=1&no_html=1`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.Abstract) {
+                    resultsDiv.innerHTML = `<h2>Result:</h2><p>${data.Abstract}</p>`;
+                } else if (data.RelatedTopics.length > 0) {
+                    resultsDiv.innerHTML = '<h2>Suggestions:</h2>';
+                    data.RelatedTopics.forEach(topic => {
+                        if (topic.Text) {
+                            resultsDiv.innerHTML += `<p>${topic.Text}</p>`;
+                        }
+                    });
+                } else {
+                    resultsDiv.innerHTML = '<p>No results found.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                resultsDiv.innerHTML = '<p>Error fetching data.</p>';
+            });
+    } else {
+        resultsDiv.innerHTML = '<p>Please enter a search term.</p>';
+    }
+});
+
+
+
+    </script>
+
+</body>
+</html>
